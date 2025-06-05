@@ -39,8 +39,8 @@ class Timer {
     this.targetDate = selectedDates[0];
     if (this.targetDate <= new Date()) {
       iziToast.error({
-        title: "Error",
-        message: "Please choose a date in the future",
+        title: "Помилка",
+        message: "Виберіть майбутню дату",
         position: "topRight",
       });
       this.refs.startButton.disabled = true;
@@ -74,8 +74,8 @@ class Timer {
     this.updateDisplay({ days: 0, hours: 0, minutes: 0, seconds: 0 });
     this.refs.input.disabled = false;
     iziToast.info({
-      title: "Info",
-      message: "Countdown finished",
+      title: "Інформація",
+      message: "Відлік завершено",
       position: "topRight",
     });
   }
@@ -108,5 +108,5 @@ class Timer {
 
 const timer = new Timer({
   selector: "#timer-1",
-  targetDate: new Date(), // This will be updated by flatpickr
+  targetDate: new Date(),
 });
