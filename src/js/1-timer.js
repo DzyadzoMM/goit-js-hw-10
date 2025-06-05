@@ -4,9 +4,8 @@ import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 
 class Timer {
-  constructor({ selector, targetDate }) {
-    this.selector = selector;
-    this.targetDate = targetDate;
+  constructor() {
+    this.targetDate = null;
     this.refs = {
       input: document.querySelector("#datetime-picker"),
       startButton: document.querySelector("[data-start]"),
@@ -36,15 +35,17 @@ class Timer {
   }
 
   onDateSelected(selectedDates) {
-    this.targetDate = selectedDates[0];
-    if (this.targetDate <= new Date()) {
+    const selectedDate = selectedDates[0];
+    if (selectedDate <= new Date()) {
       iziToast.error({
-        title: "Помилка",
-        message: "Виберіть майбутню дату",
+        title: "Error",
+        message: "Please choose a date in the future.",
         position: "topRight",
       });
       this.refs.startButton.disabled = true;
+      this.targetDate = null;
     } else {
+      this.targetDate = selectedDate;
       this.refs.startButton.disabled = false;
     }
   }
@@ -74,8 +75,8 @@ class Timer {
     this.updateDisplay({ days: 0, hours: 0, minutes: 0, seconds: 0 });
     this.refs.input.disabled = false;
     iziToast.info({
-      title: "Інформація",
-      message: "Відлік завершено",
+      title: "Info",
+      message: "Countdown complete",
       position: "topRight",
     });
   }
@@ -106,7 +107,4 @@ class Timer {
   }
 }
 
-const timer = new Timer({
-  selector: "#timer-1",
-  targetDate: new Date(),
-});
+const timer = new Timer();
