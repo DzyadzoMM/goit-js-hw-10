@@ -1,0 +1,108 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1a1a2e; 
+  color: #e0e0e0;
+  margin: 0; /* Прибираємо стандартні відступи */
+  padding: 20px; /* Додаємо відступи по краях сторінки */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Центруємо контент по горизонталі */
+  min-height: 100vh; /* Забезпечує, що контент займає всю висоту */
+  box-sizing: border-box; /* Враховуємо padding у розмірах */
+}
+.link_the_main {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #8be9fd;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 15px;
+  border: 1px solid #8be9fd;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.link_the_main:hover,
+.link_the_main:focus {
+  background-color: #8be9fd;
+  color: #1a1a2e;
+  box-shadow: 0 0 10px rgba(139, 233, 253, 0.6);
+}
+
+.title {
+  color: #f8f8f2; /* Білий колір для заголовка */
+  margin-bottom: 30px;
+  font-size: 2.5em;
+  text-shadow: 0 0 10px rgba(248, 248, 242, 0.5);
+}
+/* --- Стилі для списку навігації --- */
+ul {
+  list-style: none; /* Прибираємо маркери списку */
+  padding: 0; /* Прибираємо стандартні відступи */
+  margin: 50px 0; /* Додаємо відступи зверху та знизу */
+  display: flex;
+  flex-direction: column; /* Елементи списку будуть у стовпчик */
+  gap: 25px; /* Простір між елементами списку */
+  background-color: #282a36; /* Темніший фон для контейнера списку */
+  padding: 40px 60px; /* Внутрішні відступи */
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Тінь для ефекту глибини */
+}
+
+li {
+  text-align: center; /* Центруємо текст посилання всередині li */
+}
+
+li a {
+  display: block; /* Робимо посилання блочним для легшого натискання та відступів */
+  color: #8be9fd; /* Яскравий колір для посилання */
+  text-decoration: none; /* Прибираємо підкреслення */
+  font-weight: bold;
+  font-size: 1.5em; /* Більший розмір шрифту */
+  padding: 15px 30px; /* Внутрішні відступи для посилання */
+  border: 2px solid #6272a4; /* Бордер м'якого синього кольору */
+  border-radius: 10px;
+  transition: all 0.3s ease; /* Плавний перехід для всіх властивостей */
+}
+
+li a:hover,
+li a:focus {
+  background-color: #8be9fd; /* Зміна фону при наведенні */
+  color: #1a1a2e; /* Зміна кольору тексту при наведенні */
+  border-color: #8be9fd; /* Зміна кольору бордера */
+  box-shadow: 0 0 15px rgba(139, 233, 253, 0.7); /* Тінь при наведенні */
+  transform: translateY(-3px); /* Легкий підйом елемента */
+}
+
+li a:active {
+  transform: translateY(0); /* Повернення в початкове положення при натисканні */
+  box-shadow: 0 0 8px rgba(139, 233, 253, 0.4);
+}
+
+/* --- Адаптивність для менших екранів --- */
+@media (max-width: 600px) {
+  body {
+    padding: 15px; /* Зменшуємо загальні відступи */
+  }
+
+  ul {
+    padding: 30px 40px; /* Зменшуємо внутрішні відступи контейнера */
+    gap: 20px; /* Зменшуємо простір між елементами */
+    width: 90%; /* Робимо контейнер вужчим на мобільних */
+    box-sizing: border-box; /* Важливо для width та padding */
+  }
+
+  li a {
+    font-size: 1.2em; /* Зменшуємо розмір шрифту посилання */
+    padding: 12px 20px; /* Зменшуємо внутрішні відступи посилання */
+  }
+}
+
+@media (max-width: 400px) {
+  ul {
+    padding: 25px 30px;
+  }
+  li a {
+    font-size: 1.1em;
+  }
+}
